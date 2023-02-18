@@ -8,13 +8,5 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
-    //Query Method
-    List<User> findByNameContaining(String name);
 
-    //Query Method
-    //User findByUserName(String userName);
-
-    //Query Override
-    @Query("SELECT u FROM User u WHERE u.name LIKE %:name%")
-    List<User> filtrarPorNome(@Param("name") String name);
 }
